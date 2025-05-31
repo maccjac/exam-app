@@ -1,0 +1,14 @@
+const ANSWERS_KEY = 'exam_answers';
+
+export const saveProgress = (answers: any[]) => {
+  localStorage.setItem(ANSWERS_KEY, JSON.stringify(answers));
+};
+
+export const getProgress = (): any[] => {
+  const saved = localStorage.getItem(ANSWERS_KEY);
+  return saved ? JSON.parse(saved) : [];
+};
+
+export const clearProgress = () => {
+  localStorage.removeItem(ANSWERS_KEY);
+};
